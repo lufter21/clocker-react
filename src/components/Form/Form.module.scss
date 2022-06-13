@@ -1,0 +1,169 @@
+@import '../../sass/variables';
+@import '../../sass/extends';
+@import '../../sass/mixins';
+@import '../../sass/functions';
+
+.form{
+    display: block;
+    &__row{
+        margin-top: em(26);
+        @include fch(t);
+        &_btn{
+            margin-top: em(65);
+        }
+        &_btnV2{
+            margin-top: em(44);
+        }
+    }
+    &__border{
+        padding: em(65);
+        border: 1px dashed $bk;
+        & + .form__row_btn{
+            margin-top: em(78);
+        }
+    }
+    &__field{
+        position: relative;
+        &_hidden{
+            display: none;
+        }
+        &_mt{
+            margin-top: em(16);
+            @include fch(t);
+        }
+        &_btn{
+            .form__text-input{
+                padding-right: 50px;
+            }
+        }
+    }
+    &__label{
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+    }
+    &__submit{
+        @extend %btn;
+        font-weight: 700;
+        border: 1px solid $bk;
+        width: 100%;
+        height: em(64);
+        &:not(:disabled):hover{
+            background: $bk;
+            color: $wh;
+        }
+        &_wh{
+            border-color: $whTxt;
+            color: $whTxt;
+            &:not(:disabled):hover{
+                background: $whTxt;
+                color: $txt;
+            }
+        }
+        .form_sending &,
+        &.loading{
+            position: relative;
+            &:before{
+                @extend %ab;
+                @extend %fwh;
+                background: $bk;
+                z-index: 2;
+            }
+            &:after{
+                @extend %ab;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                z-index: 3;
+                margin: -15px 0 0 -15px;
+                width: 30px;
+                height: 30px;
+                background: url("../../images/loading.svg") no-repeat 50% 50%;
+                background-size: 100% 100%;
+                animation: form_loading_icon .9s infinite linear;
+            }
+            &_wh{
+                &::before{
+                    background: $whBg;
+                }
+            }
+        }
+        &:disabled{
+            color: $gy;
+            border-color: $gy;
+            cursor: default;
+        }
+    }
+    &__privacy{
+        font-size: em(12);
+        line-height: (17/12);
+        margin-top: em(14,12);
+        text-align: right;
+    }
+    &_my{
+        margin: rem(80) 0;
+    }
+    &__error{
+        font-size: em(14);
+        margin-top: 1em;
+        color: $rd;
+        text-align: center;
+    }
+    @media(max-width: 1000px){
+        &_my{
+            margin: 16px 0 60px;
+        }
+        &__field{
+            margin-top: 16px;
+        }
+        &__privacy{
+            text-align: left;
+            max-width: 327px;
+        }
+    }
+    @media(max-width: 750px){
+        &__border{
+            padding: 26px;
+            & + .form__row_btn{
+                margin-top: 32px;
+            }
+        }
+    }
+}
+
+@keyframes form_loading_icon {
+    0% {
+        transform: rotate(0deg); 
+    }
+    100% {
+        transform: rotate(360deg); 
+    }
+}
+
+@keyframes form_loading {
+    0% {
+        transform: translate(-100%);
+    }
+    50% {
+        transform: translate(50%);
+    }
+    100% {
+        transform: translate(-100%);
+    }
+}
+
+.captcha{
+    padding: em(24);
+    background: $lgy;
+    margin-left: em(20);
+    display: inline-block;
+    canvas{
+        margin-bottom: em(10);
+    }
+    @media(max-width: 1000px){
+        margin: 26px 0 0;
+        display: block;
+    }
+}

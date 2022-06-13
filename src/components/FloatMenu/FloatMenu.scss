@@ -1,0 +1,70 @@
+@import '../../sass/variables';
+@import '../../sass/extends';
+@import '../../sass/functions';
+@import '../../sass/mixins';
+
+.float-menu{
+    overflow: hidden;
+    height: em(64);
+    &__btn{
+        @extend %btn;
+        font-weight: 700;
+        height: em(64);
+        width: 100%;
+        span{
+            position: relative;
+            z-index: 2;
+        }
+        &.active{
+            color: $whTxt;
+            &::before{
+                @extend %ab;
+                position: absolute;
+                top: 0;
+                height: 100%;
+                left: 0;
+                right: 0;
+                background: $bk;
+            }
+        }
+    }
+    &__fix{
+        height: em(64);
+        background: $whBg;
+        .fixed &{
+            position: fixed;
+            left: 0;
+            top: em(70);
+            width: 100%;
+            border-bottom: 1px solid rgba(48, 48, 48, 0.2);
+            z-index: 7;
+        }
+    }
+    .col-fill{
+        padding: 0;
+        &:first-child{
+            button{
+                color: $whTxt;
+                &::before{
+                    @extend %ab;
+                    position: absolute;
+                    top: 0;
+                    height: 100%;
+                    right: 0;
+                    background: $bk;
+                    left: -100vw;
+                }
+            }
+        }
+        &:last-child{
+            .active{
+                &::before{
+                    right: -100vw;
+                }
+            }
+        }
+    }
+    @media(max-width: 1000px){
+        display: none;
+    }
+}

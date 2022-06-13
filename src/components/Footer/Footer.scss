@@ -1,0 +1,46 @@
+@import '../../sass/variables';
+@import '../../sass/extends';
+@import '../../sass/functions';
+@import '../../sass/mixins';
+
+.footer{
+    flex: 0 0 auto;
+    border-top: 1px solid rgba(48, 48, 48, 0.2);
+    padding: em(80) 0 em(100);
+    &__logo{
+        display: inline-block;
+        width: em(112);
+        img{
+            @extend %fw-img;
+        }
+    }
+    &__tit{
+        font-size: em(18);
+        font-weight: 700;
+        padding-top: em(14,18);
+    }
+    @media(max-width: 1000px){
+        padding: 65px 0 150px;
+        &__tit{
+            padding-top: 52px;
+        }
+    }
+}
+
+.foot-nav{
+    list-style: none;
+    margin-top: em(28);
+    &__item{
+        margin-top: em(18);
+        @include fch(t);
+    }
+    &__a{
+        display: inline-block;
+        text-decoration: none;
+        line-height: (19/16);
+        transition: .21s;
+        &:hover{
+            opacity: .7;
+        }
+    }
+}

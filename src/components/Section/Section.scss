@@ -1,0 +1,21 @@
+@import '../../sass/functions';
+
+.section{
+    padding: em(80) 0;
+    &__title{
+        font-size: em(48);
+        font-weight: 600;
+        margin-bottom: em(65,48);
+        line-height: (62/48);
+    }
+    @media(max-width: 1000px){
+        padding: 80px 0;
+        &.pt-100{
+            padding-top: 80px;
+        }
+        &__title{
+            font-size: 32px;
+            margin-bottom: 32px;
+        }
+    }
+}

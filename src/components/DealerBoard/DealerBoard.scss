@@ -1,0 +1,111 @@
+@import '../../sass/variables';
+@import '../../sass/extends';
+@import '../../sass/functions';
+@import '../../sass/mixins';
+
+.dealer-board{
+    &__block{
+        flex: 1 1 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    &__top{
+        font-size: em(18);
+        padding: em(5,18) 0;
+        border-bottom: 1px solid $lgy;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: em(40,18);
+        &-toggle{
+            @extend %btn;
+            width: 100%;
+            text-align: left;
+            justify-content: flex-start;
+            &::after{
+                @extend %btn-icon;
+                right: em(3,18);
+                width: em(8,18);
+                height: em(8,18);
+                margin-top: em(-5,18);
+                border-left: 1px solid #000000;
+                border-bottom: 1px solid #000000;
+                transform: rotate(-45deg);
+            }
+            &.active{
+                &::after{
+                    transform: rotate(135deg);
+                    margin-top: em(-2,18);
+                }
+            }
+        }
+    }
+    &__brands-btn{
+        @extend %btn;
+        width: 100%;
+        text-align: left;
+        justify-content: flex-start;
+        &::after{
+            @extend %btn-icon;
+            right: em(3);
+            width: em(8);
+            height: em(8);
+            margin-top: em(-3);
+            border-left: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            transform: rotate(-135deg);
+        }
+        span{
+            width: auto;
+        }
+        &-span{
+            margin-right: em(26);
+            flex: 0 0 auto;
+            opacity: .5;
+        }
+        &-brands{
+            flex: 1 1 auto;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            padding-right: em(27);
+            span{
+                display: block;
+                text-align: right;
+            }
+        }
+    }
+    &__deposit{
+        font-size: em(48);
+        font-weight: 700;
+        line-height: (62/48);
+        margin: em(12,48) 0 em(40,48);
+    }
+    &__bottom{
+        margin-top: auto;
+    }
+    &-hidden:not(.active){
+        display: none;
+    }
+    @media(max-width: 1000px){
+        &__block{
+            margin: 20px 0;
+        }
+        &__deposit{
+            margin: 20px 0 0;
+        }
+        &__bottom{
+            margin-top: 32px;
+            .mt-32:first-child{
+                margin-top: 0 !important;
+            }
+        }
+    }
+    @media(max-width: 750px){
+        &__deposit{
+            font-size: 32px;
+            font-weight: 600;
+        }
+    }
+}

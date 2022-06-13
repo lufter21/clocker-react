@@ -1,0 +1,132 @@
+@import '../../../sass/variables';
+@import '../../../sass/functions';
+@import '../../../sass/extends';
+@import '../../../sass/mixins';
+
+.autocomplete {
+	position: relative;
+	z-index: 1;
+	width: r(145);
+}
+
+.input {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	font-size: r(18);
+	height: r(24);
+	padding-right: r(18);
+	border: none;
+	background: none;
+	line-height: normal;
+	transition: 0.21s;
+	position: relative;
+	z-index: 2;
+	white-space: nowrap;
+	overflow-x: auto;
+	cursor: pointer;
+}
+
+.arr {
+	display: block;
+	width: r(13);
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 7;
+	border: none;
+	background: $whBg;
+	cursor: pointer;
+	&:after {
+		@extend %ab;
+		width: r(9);
+		height: r(9);
+		border-left: 1px solid $bk;
+		border-bottom: 1px solid $bk;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		margin-top: r(-6);
+		transform: rotate(-45deg);
+	}
+}
+
+.options {
+	list-style: none;
+	max-height: 250px;
+	overflow: auto;
+	transition: 0.21s;
+	padding: em(12) 0;
+	&Li {
+		margin-top: r(10);
+		@include fch(t);
+		&.hidden {
+			display: none;
+		}
+		&:first-child {
+			border: none;
+		}
+		&.hover {
+			.autocomplete__val {
+				color: $rd;
+			}
+		}
+	}
+	&Btn {
+		display: block;
+		font-size: r(14);
+		width: 100%;
+		text-decoration: none;
+		text-align: left;
+		border: none;
+		background: none;
+		transition: 0.21s;
+		span {
+			color: $rd;
+		}
+		&:hover {
+			opacity: 0.7;
+		}
+	}
+	&::-webkit-scrollbar {
+		width: 3px;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: $lgy;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: $gy;
+	}
+	&Wrap {
+		position: absolute;
+		left: 0;
+		top: 100%;
+		width: 150px;
+		padding: r(12) 0 0;
+		background: $whBg;
+		overflow: hidden;
+		visibility: hidden;
+		transition: opacity 0.3s ease;
+		opacity: 0;
+		z-index: 1;
+		&_vis {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+}
+
+.placeholder {
+	display: inline-flex;
+	align-items: center;
+	font-size: em(18);
+	height: em(24, 18);
+	line-height: normal;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	max-width: 100%;
+	pointer-events: none;
+}

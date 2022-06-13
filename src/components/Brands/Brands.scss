@@ -1,0 +1,51 @@
+@import '../../sass/variables';
+@import '../../sass/functions';
+@import '../../sass/extends';
+@import '../../sass/mixins';
+
+.brands{
+    &__block{
+        margin-top: em(80);
+        @include fch(t);
+        &-tit{
+            font-size: em(32);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+    }
+    &__list{
+        margin-top: em(17);
+        list-style: none;
+        li{
+            font-size: em(18);
+            margin-top: 1em;
+            @include fch(t);
+            padding-left: 34px;
+            position: relative;
+            &::before{
+                @extend %ab;
+                width: em(8,18);
+                height: em(8,18);
+                background: $txt;
+                border-radius: 50%;
+                position: absolute;
+                left: em(6,18);
+                top: 50%;
+                margin-top: em(-4,18);
+            }
+        }
+    }
+    @media(max-width: 750px){
+        &__block{
+            margin-top: 40px;
+            &-tit{
+                font-size: 24px;
+            }
+        }
+        &__list{
+            li{
+                margin-top: 14px;
+            }
+        }
+    }
+}

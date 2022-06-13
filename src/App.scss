@@ -1,0 +1,51 @@
+@import "./sass/variables"; 
+@import "./sass/functions"; 
+@import "./sass/extends"; 
+@import "./sass/mixins";
+
+html, body, #root {
+    font-family: $ff;
+    font-size: 16px;
+    color: $txt;
+    background: $whBg;
+    height: 100%;
+    @media(max-width: 1600px){
+        font-size: vw(16,1600);
+    }
+    @media(max-width: 1000px){
+        font-size: 16px;
+    }
+}
+#root{
+    display: flex;
+    flex-direction: column;
+    & > svg{
+        width: 0;
+        height: 0;
+    }
+}
+a:hover{
+    text-decoration: none;
+}
+hr{
+    margin: 5px 0;
+    border: none;
+    border-bottom: 1px solid $gy;
+}
+figure{
+    img{
+        @extend %fw-img;
+    }
+}
+figcaption{
+    font-size: em(12);
+    color: $gy;
+    margin-top: em(14,12);
+    line-height: (16/12);
+}
+
+@import "./sass/grid";
+@import "./sass/button";
+@import "./sass/icon";
+@import "./sass/styles";
+@import "./sass/class";

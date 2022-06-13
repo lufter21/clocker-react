@@ -1,0 +1,47 @@
+@import '../../../sass/variables';
+@import '../../../sass/functions';
+@import '../../../sass/extends';
+
+.CheckBox{
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    cursor: pointer;
+    &__label{
+        font-size: em(18);
+        padding-left: em(14,18);
+        flex: 0 1 auto;
+        transition: .21s;
+    }
+    &__button{
+        display: block;
+        flex: 0 0 em(32);
+        max-width: em(32);
+        height: em(32);
+        background: $whBg;
+        position: relative;
+        &:after{
+            @extend %ab;
+            width: 100%;
+            height: 100%;
+            background: url('../../../images/icons/done.svg') no-repeat;
+            background-size: contain;
+            visibility: hidden;
+        }
+    }
+    &__input{
+        position: absolute;
+        left: -9999px;
+        &:checked + span{
+            &:after{
+                visibility: visible;
+            }
+        }
+    }
+    &:hover{
+        .toggle__label{
+            opacity: .7;
+        }
+    }
+}

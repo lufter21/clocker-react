@@ -1,0 +1,86 @@
+@import '../../sass/variables';
+@import '../../sass/extends';
+@import '../../sass/functions';
+@import '../../sass/mixins';
+
+.first-screen {
+	overflow: hidden;
+	height: em(562);
+	margin-bottom: em(30);
+	& > .row_col-middle {
+		height: 100%;
+	}
+	&__title {
+		font-size: em(48);
+		font-weight: 600;
+		line-height: (62/48);
+		&_sm {
+			font-size: em(36);
+			line-height: (47/36);
+			margin-top: em(90, 36);
+		}
+	}
+	&__sub-title {
+		font-size: em(20);
+		margin-top: 1em;
+		line-height: (32/20);
+	}
+	&__bold-title {
+		font-size: em(54);
+		font-weight: 700;
+		margin-top: em(26, 54);
+		line-height: (70/54);
+	}
+	&__btn {
+		max-width: per(384, 689);
+		margin-top: em(65);
+	}
+	&_bg {
+		position: relative;
+		& > div {
+			position: relative;
+			z-index: 2;
+		}
+		&::after {
+			@extend %ab;
+			width: em(898);
+			height: em(561);
+			background: url('../../images/fs-bg.svg') no-repeat;
+			background-size: 100% 100%;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+	}
+	@media (max-width: 1000px) {
+		height: auto;
+		padding-top: 80px;
+		margin-bottom: 20px;
+		&_bg {
+			padding-bottom: 200px;
+			&::after {
+				width: 375px;
+				height: 232px;
+			}
+		}
+		&__title {
+			font-size: 32px;
+			&_sm {
+				font-size: 24px;
+				margin-top: 32px;
+			}
+		}
+		&__sub-title {
+			font-size: 18px;
+			margin-top: 20px;
+		}
+		&__bold-title {
+			font-size: 32px;
+			margin-top: 20px;
+		}
+		&__btn {
+			max-width: 450px;
+			margin-bottom: 36px;
+		}
+	}
+}

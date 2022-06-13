@@ -1,0 +1,79 @@
+@import '../../sass/variables';
+@import '../../sass/extends';
+@import '../../sass/functions';
+@import '../../sass/mixins';
+
+.deals{
+    &__item{
+        margin: em(22) 0;
+        &-row{
+            line-height: (26/16);
+            margin-top: em(10);
+            &_inf{
+                opacity: .5;
+            }
+        }
+        &-title{
+            font-size: em(22);
+            font-weight: 700;
+            line-height: (29/22);
+            margin-bottom: em(18,22);
+        }
+        &-date{
+            padding-bottom: em(10);
+            border-bottom: 1px dashed $txt;
+            margin-bottom: em(20);
+        }
+        &-label{
+            display: inline-block;
+            font-size: em(14);
+            line-height: (18/14);
+            padding: em(8,14) 1em;
+            background: #EEEEEE;
+            margin-bottom: em(26);
+        }
+    }
+    &__info{
+        margin-top: em(26);
+        padding-right: em(26);
+        &-title{
+            font-weight: 700;
+            margin-bottom: 1em;
+            line-height: (20/16);
+        }
+        &-row{
+            line-height: (26/16);
+            margin-top: em(6);
+        }
+        &-note{
+            font-size: em(14);
+            line-height: (18/14);
+            color: $gy;
+            margin-top: em(6,14);
+        }
+    }
+    @media(min-width: 1001px){
+        [data-colspan="hidden"]{
+            .deals__item-date{
+                visibility: hidden;
+            }
+        }
+        [data-colspan="2"]{
+            .deals__item-date{
+                width: calc(200% + 3.75rem);
+            }
+        }
+        [data-colspan="3"]{
+            .deals__item-date{
+                width: calc(300% + 7.5rem);
+            }
+        }
+    }
+    @media(max-width: 1000px){
+        [data-hidden-mob="true"]{
+            .deals__item-date{
+                display: none;
+            }
+        }
+    }
+}

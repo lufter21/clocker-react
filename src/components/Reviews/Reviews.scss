@@ -1,0 +1,41 @@
+@import '../../sass/variables';
+@import '../../sass/functions';
+@import '../../sass/extends';
+
+.reviews{
+    &__item{
+        position: relative;
+        padding-top: em(26);
+        margin: em(32) 0;
+        &::before{
+            @extend %ab;
+            width: em(13);
+            height: em(10);
+            background: url('../../images/icons/quotes.svg') no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+    &__title{
+        font-size: em(22);
+        font-weight: 700;
+        line-height: (29/22);
+        padding-top: em(20,22);
+        border-top: 1px dashed $txt;
+    }
+    &__sub-title{
+        line-height: (25/16);
+        margin-top: em(18);
+    }
+    &__txt{
+        line-height: (25/16);
+        margin-top: em(10);
+    }
+    @media(max-width: 750px){
+        &__item{
+            margin: 0 0 26px;
+        }
+    }
+}

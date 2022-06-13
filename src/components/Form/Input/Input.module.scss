@@ -1,0 +1,79 @@
+@import '../../../sass/variables';
+@import '../../../sass/functions';
+@import '../../../sass/extends';
+
+.input{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: em(64);
+	padding: 0 em(20);
+	border: 1px solid $bk;
+	background: none;
+	line-height: normal;
+	transition: .21s;
+	position: relative;
+	z-index: 2;
+	&_signBefore{
+		padding-left: em(30);
+	}
+	&:hover,
+	&:focus{
+		box-shadow: 2px 1px 21px rgba(0,0,0,.21);
+	}
+}
+
+.wrap{
+	position: relative;
+}
+
+.placeholder{
+	display: inline-flex;
+	align-items: center;
+	height: em(64);
+	padding: 0 em(20);
+	border: 1px solid transparent;
+	line-height: normal;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 3;
+	max-width: 100%;
+	pointer-events: none;
+}
+
+.icon{
+	position: absolute;
+	width: em(24);
+	height: em(24);
+	top: 50%;
+	right: em(18);
+	transform: translateY(-50%);
+}
+
+.signBefore{
+	position: absolute;
+	left: em(20);
+	top: 50%;
+	transform: translateY(-50%);
+	line-height: normal;
+}
+
+.signAfter{
+	position: absolute;
+	left: em(20);
+	top: 0;
+	height: 100%;
+	line-height: normal;
+	display: flex;
+	align-items: center;
+	&__val{
+		flex: 0 1 auto;
+		visibility: hidden;
+		opacity: 0;
+	}
+	&__sign{
+		flex: 0 1 auto;
+		margin-left: em(5);
+	}
+}

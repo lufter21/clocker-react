@@ -1,0 +1,53 @@
+[
+    {
+        "name": "About",
+        "children": [
+            {
+                "name": "Reviews",
+                "link": "/about/reviews"
+            },
+            {
+                "name": "Investors",
+                "link": "/about/investors"
+            }
+        ]
+    },
+    {
+        "name": "How it works",
+        "children": [
+            {
+                "name": "Online assessment",
+                "link": "/how-it-works/online-assessment"
+            },
+            {
+                "name": "Required documents",
+                "link": "/how-it-works/required-documents"
+            }
+        ]
+    },
+    {
+        "name": "What we buying",
+        "children": [
+            {
+                "name": "Terms",
+                "link": "/what-we-buying/general-terms"
+            },
+            {
+                "name": "Brands",
+                "link": "/what-we-buying/brands"
+            },
+            {
+                "name": "Don't redeem",
+                "link": "/what-we-buying/dont-redeem"
+            }
+        ]
+    },
+    {
+        "name": "For dealers",
+        "link": "/for-dealers"
+    },
+    {
+        "name": "Contacts",
+        "link": "/contacts"
+    }
+]

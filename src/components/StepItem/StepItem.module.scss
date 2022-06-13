@@ -1,0 +1,96 @@
+@import '../../sass/functions';
+@import '../../sass/extends';
+@import '../../sass/variables';
+
+.step{
+    padding: em(15) 0 0 em(90);
+    position: relative;
+    margin: em(20) 0;
+    min-height: em(64);
+    &::before{
+        @extend %ab;
+        width: em(64);
+        height: em(64);
+        border-radius: 50%;
+        border: 1px dashed $txt;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+    &::after{
+        @extend %ab;
+        width: em(24);
+        height: em(24);
+        background: url('../../images/icons/done.svg') no-repeat;
+        background-size: 100% 100%;
+        position: absolute;
+        left: em(32);
+        top: em(32);
+        transform: translate(-50%,-50%);
+    }
+    &__title{
+        font-size: em(28);
+        font-weight: 600;
+        line-height: (36/28);
+        a{
+            text-decoration: none;
+        }
+    }
+    &__text{
+        font-size: em(20);
+        line-height: (32/20);
+        margin-top: em(14,20);
+    }
+    &_num{
+        &::after{
+            @extend %ab;
+            content: attr(data-num);
+            width: auto;
+            height: auto;
+            background: none;
+            font-size: em(28);
+            font-weight: 600;
+            left: em(32,28);
+            top: em(32,28);
+        }
+    }
+    &_icon{
+        &::after{
+            display: none;
+        }
+    }
+    &[data-border="solid"]{
+        &::before{
+            border-style: solid;
+        }
+    }
+    @media(max-width: 1000px){
+        &__title{
+            font-size: 24px;
+        }
+        &__text{
+            font-size: 18px;
+        }
+    }
+    @media(max-width: 750px){
+        padding: 84px 0 0;
+        margin: 15px 0;
+        min-height: 1px;
+        &__text{
+            margin-top: 4px;
+        }
+    }
+}
+
+.iconWrap{
+    width: rem(64);
+    height: rem(64);
+    padding: 0 rem(20);
+    position: absolute;
+    left: 0;
+    top: 0;
+    @extend %fx-c;
+}
+.icon{
+    @extend %fw-img;
+}

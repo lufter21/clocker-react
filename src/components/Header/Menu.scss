@@ -1,0 +1,133 @@
+@import '../../sass/variables';
+@import '../../sass/extends';
+@import '../../sass/functions';
+@import '../../sass/mixins';
+
+.menu{
+    display: flex;
+    list-style: none;
+    margin-left: em(40);
+    &_ml{
+        margin-left: em(30);
+    }
+    &__item{
+        flex: 0 1 auto;
+        margin-left: em(64);
+        .menu_ml &{
+            margin-left: em(35);
+        }
+        @include fch(l);
+        &_has-children{
+            position: relative;
+            .menu__arr{
+                display: inline-block;
+            }
+            @media(min-width: 1001px){
+                &:hover{
+                    .menu__sub-menu{
+                        visibility: visible;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        &_current{
+            .menu__a{
+                font-weight: 600;
+            }
+        }
+    }
+    &__a{
+        @extend %btn;
+        font-size: em(18);
+        transition: .21s;
+        position: relative;
+        z-index: 2;
+        &:hover{
+            opacity: .7;
+        }
+    }
+    @media(max-width: 1750px){
+        &__item{
+            margin-left: em(45);
+        }
+    }
+    @media(max-width: 1000px){
+        flex-direction: column;
+        margin: 45px 0 0;
+        &__item{
+            margin: 32px 0 0 !important;
+            @include fch(t);
+        }
+    }
+}
+
+/*sub menu*/
+.sub-menu{
+    top: 0;
+    left: em(-15);
+    transition: .3s;
+    padding-top: em(48);
+
+    @media(min-width: 1001px){
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+    }
+    
+    .header_fixed &{
+        background: #ffffff;
+        box-shadow: 0 3px 3px rgba(0,0,0,.11);
+    }
+
+    &__inner{
+        background: $whBg;
+        padding: em(16) em(24);
+        list-style: none;
+    }
+    
+    &__item{
+        margin-top: 1em;
+        @include fch(t);
+        &_current{
+            .sub-menu__a{
+                font-weight: 600;
+            }
+        }
+    }
+    
+    &__a{
+        font-size: em(18);
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        display: inline-block;
+        transition: .21s;
+        white-space: nowrap;
+        &:hover{
+            opacity: .7;
+        }
+    }
+    
+    @media(max-width: 1000px){
+        width: auto;
+        left: 0;
+        position: relative;
+        overflow: hidden;
+        padding: 20px 0 0 20px;
+        display: none;
+        &__inner{
+            padding: 0;
+        }
+        &.active{
+            display: block;
+        }
+        &__item{
+            float: none;
+            margin: 0;
+            padding: 9px 0;
+        }
+        &__a{
+            white-space: normal;
+        }
+    }
+}

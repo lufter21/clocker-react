@@ -1,0 +1,58 @@
+@import '../../sass/variables';
+@import '../../sass/functions';
+@import '../../sass/extends';
+
+.add-btn{
+    @extend %btn;
+    width: 100%;
+    height: em(64);
+    color: $txt;
+    background: none;
+    border: 1px solid $bk;
+    padding: 0 em(10) 0 em(76);
+    justify-content: flex-start;
+    text-align: left;
+    &__sign{
+        @extend %btn-icon;
+        max-width: em(40);
+        height: em(40);
+        border: 1px solid $bk;
+        border-radius: 50%;
+        left: em(20);
+        margin-top: em(-20);
+        transition: .21s;
+        &::before{
+            @extend %ab;
+            width: em(20);
+            height: 1px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%);
+            background: $txt;
+            transition: .21s;
+        }
+        &::after{
+            @extend %ab;
+            width: 1px;
+            height: em(20);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            background: $txt;
+            transition: .21s;
+        }
+    }
+    &:hover{
+        background: $bk;
+        color: $whTxt;
+        .add-btn__sign{
+            border-color: $whTxt;
+            &::before,
+            &::after{
+                background: $whTxt;
+            }
+        }
+    }
+}

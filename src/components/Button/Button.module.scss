@@ -1,0 +1,92 @@
+@import '../../sass/variables';
+@import '../../sass/extends';
+@import '../../sass/functions';
+@import '../../sass/mixins';
+
+.borderBtn{
+    @extend %btn;
+    font-size: em(28);
+    width: 100%;
+    height: em(122,28);
+    font-weight: 600;
+    padding: 10px em(100,28) 10px em(40,28);
+    border: 1px dashed $txt;
+    text-align: left;
+    justify-content: flex-start;
+    &__btn{
+        display: block;
+        max-width: em(40,28);
+        height: em(40,28);
+        border: 1px solid $txt;
+        border-radius: 50%;
+        position: absolute;
+        right: em(40,28);
+        top: 50%;
+        margin-top: em(-20,28);
+        background: $whBg;
+        &::after{
+            @extend %ab;
+            width: em(10,28);
+            height: em(10,28);
+            border-top: 1px solid $txt;
+            border-right: 1px solid $txt;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-73%,-50%) rotate(45deg);
+        }
+    }
+    &:hover{
+        background: $bk;
+        color: $whTxt;
+    }
+    @media(max-width: 750px){
+        font-size: 24px;
+        height: auto;
+        min-height: 114px;
+        padding: 26px 70px 26px 26px;
+        &__btn{
+            right: 26px;
+            font-size: 28px;
+        }
+    }
+}
+
+.moneyButtons{
+    list-style: none;
+    display: flex;
+    li{
+        flex: 0 0 auto;
+        padding-left: em(14);
+        margin-left: em(14);
+        border-left: 1px solid $lgy;
+        &:first-child{
+            margin-left: 0;
+            padding-left: 0;
+            border: none;
+        }
+    }
+    &__btn{
+        @extend %btn;
+        font-size: em(18);
+        opacity: .64;
+        &.active{
+            opacity: 1;
+        }
+    }
+}
+
+.question{
+    @extend %icon-btn;
+    width: em(40);
+    height: em(40);
+    border: 1px solid $txt;
+    border-radius: 50%;
+    img{
+        width: em(24);
+        height: em(24);
+    }
+    &:hover{
+        opacity: .7;
+    }
+}

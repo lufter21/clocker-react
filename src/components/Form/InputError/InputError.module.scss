@@ -1,0 +1,26 @@
+@import '../../../sass/variables';
+@import '../../../sass/functions';
+@import '../../../sass/extends';
+
+.errorWrap{
+    position: relative;
+}
+.errorTip{
+    font-size: em(12);
+    padding-top: em(2,12);
+    color: $rd;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    max-width: 100%;
+}
+.isError{
+    input,
+    textarea{
+        border-color: $rd !important;
+        color: $rd;
+    }
+    button{
+        border-color: $rd !important;
+    }
+}

@@ -1,0 +1,51 @@
+.btn{
+    @extend %btn;
+    width: 100%;
+    height: em(64);
+    color: $txt;
+    font-weight: 700;
+    background: none;
+    border: 1px solid $bk;
+    padding: 0 em(15);
+    &:not(:disabled):hover{
+        background: $bk;
+        color: $whTxt;
+    }
+    &:disabled{
+        color: $gy;
+        border-color: $gy;
+        cursor: default;
+    }
+}
+.sm-btn{
+    @extend %btn;
+    width: em(147);
+    height: em(46);
+    color: $txt;
+    font-weight: 700;
+    background: none;
+    border: 1px solid $bk;
+    padding: 0 em(5);
+    &:hover{
+        background: $bk;
+        color: $whTxt;
+    }
+}
+
+.dots{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    li{
+        flex: 0 0 8px;
+        max-width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #BBBBBB;
+        opacity: .5;
+        margin: 0 4px;
+        &.active{
+            opacity: 1;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Contacts",
+        "children": [
+            {
+                "name": "+000 555 88 44",
+                "link": "tel:+0005558844"
+            },
+            {
+                "name": "Contacts",
+                "link": "/contacts"
+            }
+        ]
+    },
+    {
+        "name": "About",
+        "children": [
+            {
+                "name": "Reviews",
+                "link": "/about/reviews"
+            },
+            {
+                "name": "Investors",
+                "link": "/about/investors"
+            }
+        ]
+    },
+    {
+        "name": "How it works",
+        "children": [
+            {
+                "name": "Online assessment",
+                "link": "/how-it-works/online-assessment"
+            },
+            {
+                "name": "Required documents",
+                "link": "/how-it-works/required-documents"
+            }
+        ]
+    },
+    {
+        "name": "What do we buy",
+        "children": [
+            {
+                "name": "General terms",
+                "link": "/what-we-buying/general-terms"
+            },
+            {
+                "name": "Brands",
+                "link": "/what-we-buying/brands"
+            },
+            {
+                "name": "Don't redeem",
+                "link": "/what-we-buying/dont-redeem"
+            }
+        ]
+    }
+]

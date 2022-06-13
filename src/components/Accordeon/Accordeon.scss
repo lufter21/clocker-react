@@ -1,0 +1,105 @@
+@import '../../sass/variables';
+@import '../../sass/extends';
+@import '../../sass/functions';
+@import '../../sass/mixins';
+
+.accord{
+    &__item{
+        border-bottom: 1px solid $lgy;
+        padding: em(24) 0;
+    }
+    &__button{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: em(14) em(100) em(14) 0;
+        position: relative;
+        width: 100%;
+        min-height: em(64);
+        text-align: left;
+        line-height: normal;
+        border: none;
+        background: none;
+        user-select: none;
+        &.active{
+            .accord__btn-btn{
+                transform: rotate(180deg);
+                &:after{
+                    opacity: 0;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+    &__btn{
+        &-txt{
+            display: block;
+            width: 100%;
+            font-size: em(28);
+            font-weight: 600;
+            line-height: (36/28);
+        }
+        &-btn{
+            display: block;
+            width: em(22);
+            height: em(22);
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: em(-11);
+            transition: .21s;
+            &::before{
+                @extend %ab;
+                width: 100%;
+                height: 1px;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                background: $txt;
+            }
+            &::after{
+                @extend %ab;
+                width: 1px;
+                height: 100%;
+                position: absolute;
+                left: 50%;
+                top: 0;
+                background: $txt;
+                transition: .21s;
+            }
+        }
+    }
+    &__content{
+        height: 0;
+        overflow: hidden;
+        transition: .21s;
+        &-inner{
+            font-size: em(20);
+            line-height: (32/20);
+            padding-right: em(160,20);
+        }
+    }
+    @media(max-width: 1000px){
+        &__content{
+            &-inner{
+                padding-right: 45px;
+            }
+        }
+    }
+    @media(max-width: 750px){
+        &__button{
+            padding-right: 50px;
+        }
+        &__btn{
+            &-txt{
+                font-size: 24px;
+            }
+        }
+        &__content{
+            &-inner{
+                font-size: 18px;
+                padding-right: 0;
+            }
+        }
+    }
+}
