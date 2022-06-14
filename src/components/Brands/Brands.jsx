@@ -39,7 +39,6 @@ const Block = function (props) {
 };
 
 function BrandsItems({ data = [], isFetching, isCheckbox }) {
-	console.log(data);
 	const firstLetters = data.map((brand) => brand.title[0]);
 	const lettersUnique = [...new Set(firstLetters)];
 

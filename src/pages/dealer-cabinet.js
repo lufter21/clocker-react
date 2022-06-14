@@ -66,15 +66,15 @@ function DealerCabinetPage() {
 		<Main>
 			<div className="top-bar">
 				<div className="row">
-					{!!profileData && profileData.status === 0 && (
+					{/* {!!profileData && (
 						<div className="col sm-col-6 col_right">
 							<button className="sm-btn" onClick={showPro}>
 								Demo
 							</button>
 						</div>
-					)}
+					)} */}
 					{!!profileData && (
-						<div className={`col sm-col-6 ${!!profileData.status ? 'col_right' : ''}`}>
+						<div className={`col sm-col-6 col_right ${!!profileData.status ? 'col_right' : ''}`}>
 							<button className="sm-btn" onClick={onLogout}>
 								Logout
 							</button>

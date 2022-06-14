@@ -31,8 +31,14 @@ const fixBody = function (st) {
         }
 
         document.body.style.right = offset + 'px';
-
+        
         document.body.style.top = -winScrollTop + 'px';
+
+        if (document.documentElement.classList.contains('is-locked')) {
+            document.body.style.position = '';
+            document.documentElement.classList.remove('is-locked');
+        }
+
     } else if (!st) {
         if (headerElem) {
             headerElem.style.right = '';
@@ -45,7 +51,7 @@ const fixBody = function (st) {
 
         window.scrollTo(0, winScrollTop);
     }
-};
+}
 
 function Popup() {
     const dispatch = useDispatch();
@@ -119,7 +125,7 @@ function Popup() {
         } else {
             fixBody(false);
         }
-    }, [visiblePopupName]);
+    }, [visiblePopupName, visiblePopup]);
 
     return <>{visiblePopup && <div className="popup">{visiblePopup}</div>}</>;
 }

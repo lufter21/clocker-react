@@ -20,7 +20,7 @@ function Header() {
 	const Auth = () => {
 		setOpenMenu(false);
 		dispatch(showAuth());
-	};
+	}
 
 	const toggleMenu = () => {
 		if (!openMenu) {
@@ -34,7 +34,7 @@ function Header() {
 		if (openMenu) {
 			closeMenu();
 		}
-	};
+	}
 
 	const closeMenu = () => {
 		document.body.style.top = '';
@@ -42,7 +42,7 @@ function Header() {
 		document.documentElement.classList.remove('is-locked');
 		setOpenMenu(false);
 		window.scrollTo(0, scrollY);
-	};
+	}
 
 	const [city, setCity] = useState({ isOpen: false, title: 'Lviv' });
 	const ref = useRef(null);
@@ -52,7 +52,7 @@ function Header() {
 	const selectCity = (event, value) => {
 		event.stopPropagation();
 		setCity({ ...city, title: value, isOpen: false });
-	};
+	}
 	
 	useOutsideClick(ref, closeCity);
 
