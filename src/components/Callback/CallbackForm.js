@@ -77,7 +77,7 @@ function CallbackForm() {
 
 						<div className={css.form__row + ' ' + css.form__row_btn + ' md-x-hidden'}>
 							<button type="submit" className={css.form__submit}>
-								Отправить
+								Submit
 							</button>
 						</div>
 					</form>

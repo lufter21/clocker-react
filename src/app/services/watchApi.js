@@ -8,7 +8,7 @@ export const watchApi = createApi({
 	endpoints: (build) => ({
 		getWatchAsCurrent: build.query({
 			query: (id) => ({
-				url: 'api/clocks/as_current/' + id
+				url: 'api/get-content.php?id=currentAuctions&sub_id=' + id
 			}),
 		}),
 		getWatches: build.query({

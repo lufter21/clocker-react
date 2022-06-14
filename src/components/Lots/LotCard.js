@@ -174,8 +174,8 @@ function LotCard(props) {
 							Next bet size:{' '}
 							<span className="bold">
 								{curr === 'usd'
-									? `$${Math.round(lot.price + lot.step)}`
-									: `₴${Math.round(lot.priceUah + lot.stepUah)}`}
+									? `$ ${Math.round(lot.price + lot.step)}`
+									: `${Math.round(lot.priceUah + lot.stepUah)} ₴`}
 							</span>
 						</div>
 					</div>

@@ -7,8 +7,8 @@ function ProVersionPopup(props) {
 
     const showNew = function () {
         dispatch(showAuth({
-            title: 'Заполните данные',
-            subTitle: 'Для доступа к аукционам, необходимо заполнить данные в форме ниже и дождаться подтверждения верификации администратором',
+            title: 'Fill in the details',
+            subTitle: 'To access the auctions, you must fill in the data in the form below and wait for the verification confirmation by the administrator',
             form: 'NewUserForm'
         }));
     }
@@ -19,22 +19,22 @@ function ProVersionPopup(props) {
                 <button className="js-popup-close popup-close-btn" onClick={props.close}></button>
 
                 <div className="popup__title">
-                    Оформить Pro - версию
+                Checkout Pro version
                 </div>
                 <div className="popup__sub-title-bold">
-                    200 <span className="mSign">&#8381;</span> / месяц
+                    $ 200 per month
                 </div>
 
                 <div className="popup__text">
                     <ul className="list">
-                        <li>Вы экономите время, так как вам не нужно объезжать несколько ламбардов в поисках наиболее выгодной цены</li>
-                        <li>Вы узнаете предварительную стоимость часов сразу и в режиме онлайн </li>
-                        <li>Вы максимально быстро продаете ваши часы, так как мы проводим по несколько аукцинов в день </li>
+                        <li>You save time as you don't have to drive around several pawn shops in search of the best price</li>
+                        <li>You will find out the preliminary cost of watches immediately and online</li>
+                        <li>You sell your watch as quickly as possible, as we hold several auctions per day</li>
                     </ul>
                 </div>
 
                 <div className="popup__btn">
-                    <button className="btn" onClick={showNew}>Оформить</button>
+                    <button className="btn" onClick={showNew}>Submit</button>
                 </div>
             </div>
         </div>

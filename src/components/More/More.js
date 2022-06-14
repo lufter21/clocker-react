@@ -15,7 +15,7 @@ function More(props) {
 	}
 
 	useEffect(() => {
-		props.btnText === 'Все вопросы' && isOpen && showAll();
+		props.btnText === 'All' && isOpen && showAll();
 	}, [isOpen]);
 
 	return (
