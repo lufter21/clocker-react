@@ -32,7 +32,7 @@ export const watchApi = createApi({
 		}),
 		getSellerAuctions: build.query({
 			query: () => ({
-				url: 'api/clocks/auction/my',
+				url: 'api/get-content.php?id=upcomingAuctions',
 				params: { limit: 9999, offset: 0 },
 			}),
 		}),

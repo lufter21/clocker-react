@@ -65,12 +65,10 @@ function DealerBoard({
 							withdrawDeposit={withdraw}
 						/>
 					</div>
-					
-					{!!profileData && !!profileData.status && (
-						<div className="col-4">
-							<DbInvite profileData={profileData} />
-						</div>
-					)}
+
+					<div className="col-4">
+						<DbInvite profileData={profileData} />
+					</div>
 
 					<div className="col-4">
 						<DbMailing profileData={profileData} />

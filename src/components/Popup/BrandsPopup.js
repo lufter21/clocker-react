@@ -18,25 +18,30 @@ function BrandsPopup(props) {
     const [updateNotification] = useUpdateNotificationMutation();
 
     const onSubmit = function (data, form, callback) {
-        updateNotification({ brands: data.notifyBrands })
-            .then(function (res) {
-                if (res.error) {
-                    setPopError(res.error.data.brands[0]);
-                } else {
-                    dispatch(
-                        usersApi.util.updateQueryData('getProfile', undefined, (userData) => {
-                            userData.notificationSettings = res.data;
-                        })
-                    );
 
-                    dispatch(closePopup());
-                }
+        callback();
 
-                callback();
+        dispatch(closePopup());
+        
+        // updateNotification({ brands: data.notifyBrands })
+        //     .then(function (res) {
+        //         if (res.error) {
+        //             setPopError(res.error.data.brands[0]);
+        //         } else {
+        //             dispatch(
+        //                 usersApi.util.updateQueryData('getProfile', undefined, (userData) => {
+        //                     userData.notificationSettings = res.data;
+        //                 })
+        //             );
 
-            }).catch(function (error) {
-                console.error(new Error(error));
-            });
+        //             dispatch(closePopup());
+        //         }
+
+        //         callback();
+
+        //     }).catch(function (error) {
+        //         console.error(new Error(error));
+        //     });
     }
 
     return (
@@ -46,7 +51,7 @@ function BrandsPopup(props) {
 
                 <div className="popup__brands">
                     <div className="popup__title bold mb-26">
-                        Бренды
+                        Brands
                     </div>
 
                     <BrandsForm setSearch={setSearch} search={search} color="white" />
@@ -64,7 +69,7 @@ function BrandsPopup(props) {
                                     </div>
                                     <div className={formCss.form__row}>
                                         <button type="submit" className={formCss.form__submit + ' ' + formCss.form__submit_wh}>
-                                            Применить
+                                            Submit
                                         </button>
                                     </div>
 

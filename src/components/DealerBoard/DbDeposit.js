@@ -19,14 +19,15 @@ function DbDeposit(props) {
 			</div>
 			{!!props.profileData && (
 				<div className="dealer-board__deposit">
+					{curr === 'usd' && '$ '}
 					{curr === 'usd'
 						? !!props.profileData.deposit
 							? props.profileData.deposit
 							: '0'
 						: !!props.profileData.depositUah
-						? props.profileData.depositUah
-						: '0'}{' '}
-					<span className="mSign">{curr === 'usd' ? '$' : '₴'}</span>
+							? props.profileData.depositUah
+							: '0'}{' '}
+					{curr !== 'usd' && <span className="mSign">₴</span>}
 				</div>
 			)}
 			{!!props.paymentsData && !!props.paymentsData.show && (

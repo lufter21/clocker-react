@@ -29,7 +29,7 @@ function DbInvite(props) {
 		<div className="dealer-board__block">
 			<div className="dealer-board__top">
 				<button className={btnClName} onClick={toggleHidden}>
-					Пригласить дилера
+					Invitations
 				</button>
 			</div>
 
@@ -47,7 +47,7 @@ function DbInvite(props) {
 								/>
 								<div className={css.form__row}>
 									<button type="submit" className={css.form__submit}>
-										Пригласить дилера
+										Invite a dealer
 									</button>
 								</div>
 							</form>

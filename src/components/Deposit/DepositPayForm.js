@@ -18,8 +18,8 @@ function DepositPayForm() {
 
                     if (!action.payload || !action.payload.error) {
                         dispatch(showMessage({
-                            title: 'Спасибо!',
-                            text: 'Вас счет успешно пополнен!'
+                            title: 'Thanks!',
+                            text: 'Your account has been successfully funded'
                         }));
                     }
                 }
@@ -28,7 +28,7 @@ function DepositPayForm() {
             });
     }
 
-    const {composeValidators, required} = useValidator();
+    const {composeValidators, required, money} = useValidator();
 
     return (
         <Form onSubmit={onSubmit} render={(props) => {
@@ -39,8 +39,8 @@ function DepositPayForm() {
                     <div className={css.form__field + ' ' + css.form__field_mt}>
                     <Field
                         name="deposit"
-                        placeholder="Ежемесячный взнос"
-                        validate={composeValidators(required('*Обязательное поле'))}
+                        placeholder="Monthly installment"
+                        validate={composeValidators(required('*Required field'), money)}
                         render={props => (
                             <InputError children={<Input {...props} />} {...props} />
                         )}
@@ -48,7 +48,7 @@ function DepositPayForm() {
                     </div>
                     
                     <div className={css.form__row +' '+css.form__row_btnV2}>
-                        <button type="submit" className={css.form__submit + ' ' + css.form__submit_wh}>Оплатить</button>
+                        <button type="submit" className={css.form__submit + ' ' + css.form__submit_wh}>Submit</button>
                     </div>
                 </form>
             );

@@ -47,15 +47,15 @@ function DbMailing(props) {
 
 			dispatch(
 				showMessage({
-					title: 'Спасибо!',
-					text: 'Настройки сохранены.',
+					title: 'Thanks!',
+					text: 'Settings have been saved',
 				})
 			);
 
 		} catch (error) {
 			dispatch(
 				showMessage({
-					title: 'Произошла ошибка!',
+					title: 'Error!',
 					text: error,
 				})
 			);
@@ -66,7 +66,7 @@ function DbMailing(props) {
 		<div className="dealer-board__block">
 			<div className="dealer-board__top">
 				<button className={btnClName} onClick={toggleHidden}>
-					Рассылка сообщений
+					Notifications
 				</button>
 			</div>
 
@@ -82,12 +82,12 @@ function DbMailing(props) {
 								<div className="mt-32">
 									<button type="button" className="dealer-board__brands-btn" onClick={choseBrands}>
 										<span className="dealer-board__brands-btn-span">
-											Выбранные бренды:
+											Selected brands:
 										</span>
 										<span className="dealer-board__brands-btn-brands">
 											{brandsNotify.length > 0 && brandsNotify.join(', ')}
 											{brandsNotify.length === 0 &&
-												<span>Все бренды</span>
+												<span>All brands</span>
 											}
 										</span>
 									</button>
@@ -96,7 +96,7 @@ function DbMailing(props) {
 									<Field
 										name="notifyAboutVictory"
 										type="checkbox"
-										label="Уведомлять о моих выигранных аукционах"
+										label="Notify me of my won auctions"
 										render={(props) => <ToggleCheckBox initialChecked={true} {...props} />}
 									/>
 								</div>
@@ -104,13 +104,13 @@ function DbMailing(props) {
 									<Field
 										name="notifyAboutAuction"
 										type="checkbox"
-										label="Уведомлять о новых часах, участвующих в аукционе"
+										label="Notify about new watches participating in the auction"
 										render={(props) => <ToggleCheckBox {...props} />}
 									/>
 								</div>
 								<div className={css.form__row}>
 									<button type="submit" className={css.form__submit}>
-										Сохранить
+										Submit
 									</button>
 								</div>
 							</form>

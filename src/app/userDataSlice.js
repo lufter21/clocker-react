@@ -23,7 +23,7 @@ export const userDataSlice = createSlice({
 			city: 'Lviv',
 			name: '',
 			deposit: {
-				rub: 0,
+				uah: 0,
 				usd: 0,
 			},
 			settings: {

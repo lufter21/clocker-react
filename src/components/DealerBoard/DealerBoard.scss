@@ -39,6 +39,9 @@
                     margin-top: em(-2,18);
                 }
             }
+            &:hover{
+                opacity: .5;
+            }
         }
     }
     &__brands-btn{

@@ -16,9 +16,9 @@ function SellerCabinetPage() {
 		nav('/');
 	};
 
-	const { data, isLoading } = useGetSellerAuctionsQuery('', {
+	const { data, isLoading } = useGetSellerAuctionsQuery('', /* {
 		pollingInterval: 3000,
-	});
+	} */);
 
 	return (
 		<Main>
@@ -26,7 +26,7 @@ function SellerCabinetPage() {
 				<div className="row">
 					<div className="col col_right sm-col-12">
 						<button className="sm-btn" onClick={onLogout}>
-							Выйти
+							Logout
 						</button>
 					</div>
 				</div>
@@ -35,7 +35,7 @@ function SellerCabinetPage() {
 			<Section>
 				<div className="row row_wrp row_col-middle row_nw">
 					<div className="col">
-						<div className="section__title mb-0">Мои часы</div>
+						<div className="section__title mb-0">My watch</div>
 					</div>
 					<div className="col col_right">
 						<CurrencyButtons />

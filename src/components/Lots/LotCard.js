@@ -165,10 +165,10 @@ function LotCard(props) {
 					<div className="lot-card__rows">
 						<div className="lot-card__rows-item">
 							Current rate:{' '}
-							<span className="bold">{curr === 'usd' ? `$${lot.price}` : `₴${lot.priceUah}`}</span>
+							<span className="bold">{curr === 'usd' ? `$ ${lot.price}` : `${lot.priceUah} ₴`}</span>
 						</div>
 						<div className="lot-card__rows-item">
-							Bet step: <span className="bold">{curr === 'usd' ? `$${lot.step}` : `₴${lot.stepUah}`}</span>
+							Bet step: <span className="bold">{curr === 'usd' ? `$ ${lot.step}` : `${lot.stepUah} ₴`}</span>
 						</div>
 						<div className="lot-card__rows-item c-gray">
 							Next bet size:{' '}
@@ -190,8 +190,8 @@ function LotCard(props) {
 											lot.leading
 												? 'Your bet is leading'
 												: curr === 'usd'
-													? `$${lot.step}`
-													: `₴${lot.stepUah}`
+													? `$ ${lot.step}`
+													: `${lot.stepUah} ₴`
 										}
 									/>
 									<div className={css.form__field + ' ' + css.form__field_mt}>
@@ -232,7 +232,7 @@ function LotCard(props) {
 																<InputError {...props}>
 																	<Input
 																		signBefore={curr === 'usd' ? '$' : null}
-																		signAfter={curr === 'rub' ? '<span class="rub">&#8381;</span>' : null}
+																		signAfter={curr !== 'usd' ? '<span class="mSign">₴</span>' : null}
 																		{...props}
 																	/>
 																</InputError>

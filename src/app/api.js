@@ -51,8 +51,8 @@ export function makeDepositApi(data) {
 		setTimeout(function () {
 			if (data.deposit) {
 				resolve({
-					rub: data.deposit,
-					usd: (data.deposit / 74).toFixed(0),
+					uah: data.deposit,
+					usd: (data.deposit / 35).toFixed(0),
 				});
 			} else {
 				resolve();

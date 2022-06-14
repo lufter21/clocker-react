@@ -9,7 +9,7 @@ function DepositPopup(props) {
                 <button className="js-popup-close popup-close-btn" onClick={props.close}></button>
 
                 <div className="popup__title mb-26">
-                    Внести депозит
+                Make a deposit
                 </div>
 
                 {props.form === 'DepositForm' &&

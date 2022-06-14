@@ -30,7 +30,7 @@ function DealsItem(props) {
 					(props.status === 2 && 'Final price:') ||
 					'Final price:'}{' '}
 				<span className="bold">
-					{props.subject === 'plannedTrades'
+					{props.subject === 'plannedTrades' || props.subject === 'sellerBoard'
 						? curr == 'usd'
 							? `$ ${props.startPrice}`
 							: `${props.startPriceUah} ₴`

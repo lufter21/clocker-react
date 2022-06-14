@@ -36,8 +36,8 @@ function DepositForm() {
                     <div className={css.form__field + ' ' + css.form__field_mt}>
                         <Field
                             name="fio"
-                            placeholder="ФИО"
-                            validate={composeValidators(required('*Обязательное поле'))}
+                            placeholder="Name"
+                            validate={composeValidators(required('*Required field'))}
                             render={props => (
                                 <InputError children={<Input {...props} />} {...props} />
                             )}
@@ -47,8 +47,8 @@ function DepositForm() {
                     <div className={css.form__field + ' ' + css.form__field_mt}>
                         <Field
                             name="email"
-                            placeholder="email"
-                            validate={composeValidators(required('*Обязательное поле'), email)}
+                            placeholder="E-mail"
+                            validate={composeValidators(required('*Required field'), email)}
                             render={props => (
                                 <InputError children={<Input {...props} />} {...props} />
                             )}
@@ -58,9 +58,8 @@ function DepositForm() {
                     <div className={css.form__field + ' ' + css.form__field_mt}>
                         <Field
                             name="phone_number"
-                            placeholder="+7"
-                            initialValue="+7"
-                            validate={composeValidators(required('*Обязательное поле'), phoneNumber)}
+                            placeholder="Phone number"
+                            validate={composeValidators(required('*Required field'), phoneNumber)}
                             render={props => (
                                 <InputError children={<Input {...props} />} {...props} />
                             )}
@@ -70,8 +69,8 @@ function DepositForm() {
                     <div className={css.form__field + ' ' + css.form__field_mt}>
                         <Field
                             name="confirm_code"
-                            placeholder="Код подтверждения"
-                            validate={composeValidators(required('*Обязательное поле'))}
+                            placeholder="Confirm code"
+                            validate={composeValidators(required('*Required field'))}
                             render={props => (
                                 <InputError children={<Input {...props} />} {...props} />
                             )}
@@ -79,7 +78,7 @@ function DepositForm() {
                     </div>
 
                     <div className={css.form__row + ' ' + css.form__row_btnV2}>
-                        <button type="submit" className={css.form__submit + ' ' + css.form__submit_wh}>Выбрать сумму депозита для оплаты</button>
+                        <button type="submit" className={css.form__submit + ' ' + css.form__submit_wh}>Submit</button>
                     </div>
                 </form>
             );
